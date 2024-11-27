@@ -7,6 +7,36 @@
     <link rel="stylesheet" href="./src/tailwind.css">
 </head>
 <body class="bg-gray-100 h-screen  dark:bg-gray-800">
+    <div class="container mx-auto px-4 py-8 space-y-8">
+        <div>
+            <h6 class="font-bold mb-2">Componente DropDown</h6>
+            <div class="relative">
+                <button class="flex items-center text-base px-3 py-1 rounded shadow border border-gray-300 bg-gray-50"
+                        onclick="toggleDropdown()">
+                    Links 
+                    <svg class="h-4 w-4 ml-2" 
+                        data-slot="icon" 
+                        fill="none" 
+                        stroke-width="1.5" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path>
+                      </svg>
+                
+                </button>
+
+                <div id="dropdownMenu" class="absolute bg-white border border-gray-300  py-1 shadow-md rounded-md" style="width: 200px;">
+                    <a class="block  text-sm text-gray-500 px-3 py-1 bg-white hover:bg-gray-100" href="">Link1</a>
+                    <a class="block  text-sm text-gray-500 px-3 py-1 bg-white hover:bg-gray-100" href="">Link2</a>
+                    <a class="block  text-sm text-gray-500 px-3 py-1 bg-white hover:bg-gray-100" href="">Link3</a>
+                    <a class="block  text-sm text-gray-500 px-3 py-1 bg-white hover:bg-gray-100" href="">Link4</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
     <div class="p-4">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati earum accusantium veniam, fuga quis placeat pariatur labore nobis repellendus quas, nostrum rerum in! Laborum eaque modi, dolor voluptate aspernatur adipisci?
@@ -80,6 +110,13 @@
         </div>
         
     </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById("dropdownMenu");
+            dropdown.classList.toggle("hidden"); 
+        }
+    </script>
 
 </body>
 </html>
